@@ -1,0 +1,13 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$color: red;
+
+.card{
+  background-color: $color;
+  width:100px;
+  height:150px;
+}
+.card-oval{
+
+}
