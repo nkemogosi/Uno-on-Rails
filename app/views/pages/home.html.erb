@@ -1,66 +1,9 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div class="test">
-  <!-- Red test -->
-  <div class="card red">
-    <div class="card-value" id="left-value">
-      9
-    </div>
-    <div class="card-value" id="center-value">
-      9
-    </div>
-    <div class="card-oval">
-    </div>
-    <div class="card-value" id="right-value">
-      9
-    </div>
-  </div>
-  <!-- Blue test -->
-  <div class="card blue">
-    <div class="card-value" id="left-value">
-      +4
-    </div>
-    <div class="card-value" id="center-value">
-      1
-    </div>
-    <div class="card-oval">
-    </div>
-    <div class="card-value" id="right-value">
-      +4
-    </div>
-  </div>
-  <!-- Green test -->
-  <div class="card green">
-    <div class="card-value" id="left-value">
-      9
-    </div>
-    <div class="card-value" id="center-value">
-      9
-    </div>
-    <div class="card-oval">
-    </div>
-    <div class="card-value" id="right-value">
-      9
-    </div>
-  </div>
-  <!-- Yellow test -->
-  <div class="card yellow">
-    <div class="card-value" id="left-value">
-      9
-    </div>
-    <div class="card-value" id="center-value">
-      9
-    </div>
-    <div class="card-oval">
+<a href="/pages/test">Test</a>
 
-    </div>
-    <div class="card-value" id="right-value">
-      9
-    </div>
-  </div>
-  <div class="card back">
-    <div class="card-oval red">
-      <!-- <h1 id="back-name">UNO</h1> -->
-    </div>
-  </div>
-</div>
+<script type="text/javascript">
+  var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
+</script>

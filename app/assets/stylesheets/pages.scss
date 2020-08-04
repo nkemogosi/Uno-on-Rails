@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 $color: red;
-$card-width: 100px;
+$card-width: 200px;
 $card-height: $card-width*1.5;
 $border-width: $card-width/20;
 $oval-rotation: 35deg;
 $border-color: #fff;
 body{
-  background-color: #000;
+  background-color: #00f;
   display: inline-flex;
 }
 .blue{
@@ -36,13 +36,34 @@ body{
   z-index: 0;
   width:$card-width;
   height:$card-height;
-  border-radius: 25px;
+  margin-left: 50px;
+  background-color: #fff;
   border: $border-width solid $border-color;
-   //  -ms-transform: skewX(60deg); /* IE 9 */
- // transform: skewX(60deg);
- margin-left: 50px;
+  backface-visibility: hidden;
+  border-radius: 25px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
 }
-:not(.back) .card:hover{
+
+.card-face{
+  width:100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  }
+.card-face-front{
+  color: #fff;
+}
+.card-face-back{
+  background-color: #000;
+  color: #000;
+  transform: rotateY(180deg);
+}
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+.hoverable:hover{
   box-shadow: 0px 0px 40px 10px #fe4;
   transform: translate(0, -5px);
 }
@@ -53,7 +74,7 @@ $oval-height:$card-height - ($border-width*2);
 .card-oval{
   position: absolute;
   z-index: 3;
-  left:15%;
+  left:20%;
   bottom: 0px;
   width:$oval-width;
   height:$oval-height;
@@ -69,6 +90,8 @@ $value-size: $card-width/4;
   height:$value-size;
   text-align: center;
   font-size: 250%;
+  position: absolute;
+  z-index: 1;
 
 }
 #back-name{
@@ -82,15 +105,13 @@ $value-size: $card-width/4;
   left: $border-width;
 }
 #center-value{
-  position: absolute;
-  z-index: 3;
   top: calc(50% - #{$value-size});
   left: calc(50% - #{$value-size/2});
   font-size: 550%;
 }
 #right-value{
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   left: calc(100% - #{$value-size+$border-width});
   top: calc(100% - #{$value-size+$border-width});
 }

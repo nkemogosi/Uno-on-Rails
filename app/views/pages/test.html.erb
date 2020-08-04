@@ -1,0 +1,57 @@
+<a href="/">Home</a>
+  <div class="tcard is-flipped">
+    <div class="tcard__face tcard__face--front green">
+      <div class="card-values">
+        <div class="card-value" id="left-value">
+          0
+        </div>
+        <div class="card-value" id="center-value">
+          0
+        </div>
+        <div class="card-value" id="right-value">
+          0
+        </div>
+      </div>
+      <div class="card-oval">
+      </div>
+    </div>
+    <div class="tcard__face tcard__face--back">
+      <div class="card-oval red">
+      </div>
+    </div>
+  </div>
+
+<p>Click tcard to flip.</p>
+<script type="text/javascript">
+  var tcard = document.querySelector('.tcard');
+  console.log(document.querySelector('.tcard'));
+tcard.addEventListener( 'click', function() {
+  tcard.classList.toggle('is-flipped');
+  tcard.classList.toggle('hoverable');
+  $(document).ready(function(){
+    alert();
+  });
+});
+</script>
+
+<div class="tcard hoverable">
+  <div class="tcard__face tcard__face--front green">
+    <div class="card-values">
+      <div class="card-value" id="left-value">
+        0
+      </div>
+      <div class="card-value" id="center-value">
+        0
+      </div>
+      <div class="card-value" id="right-value">
+        0
+      </div>
+    </div>
+    <div class="card-oval">
+    </div>
+  </div>
+  <div class="tcard__face tcard__face--back">
+    <div class="card-oval red">
+    </div>
+  </div>
+</div>
