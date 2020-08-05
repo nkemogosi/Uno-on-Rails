@@ -1,37 +1,16 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 $color: red;
 $card-width: 200px;
 $card-height: $card-width*1.5;
 $border-width: $card-width/20;
 $oval-rotation: 35deg;
 $border-color: #fff;
+
 body{
   background-color: #00f;
   display: inline-flex;
 }
-.blue{
-  background-color: #07c;
-}
-.red{
-  background-color: #f43;
-}
-.green{
-  background-color: #5b4;
-}
-.yellow{
- background-color: #fe4;
-}
-.back{
- background-color: #000;
-}
-.test{
-  display: inline-flex;
-  position: absolute;
-  top: 50px;
-}
-.card{
+
+.uno_card{
   position: relative;
   z-index: 0;
   width:$card-width;
@@ -39,35 +18,53 @@ body{
   margin-left: 50px;
   background-color: #fff;
   border: $border-width solid $border-color;
-  backface-visibility: hidden;
   border-radius: 25px;
   transition: transform 1s;
   transform-style: preserve-3d;
 }
 
-.card-face{
-  width:100%;
+.uno_card-face{
+  position: absolute;
+  width: 100%;
   height: 100%;
-  border-radius: 25px;
+  color: white;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  }
-.card-face-front{
-  color: #fff;
-}
-.card-face-back{
-  background-color: #000;
-  color: #000;
-  transform: rotateY(180deg);
-}
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-.hoverable:hover{
-  box-shadow: 0px 0px 40px 10px #fe4;
-  transform: translate(0, -5px);
+  border-radius: 15px;
 }
 
+$value-size: $card-width/4;
+
+.card-value-container{
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  width:$value-size;
+  height:$value-size;
+  position: absolute;
+  z-index: 1;
+}
+.card-value-text{
+  position: absolute;
+  font-size: 50px;
+  width:100%;
+  text-align: center;
+}
+.card-value-left{
+  top: $border-width;
+  left: $border-width;
+}
+.card-value-mid{
+  width:$value-size*1.25;
+  height:$value-size*1.25;
+  font-size: 70px;
+  top: calc(50% - #{$value-size});
+  left: calc(50% - #{$value-size/2});
+}
+.card-value-right{
+  left: calc(100% - #{$value-size+$border-width});
+  top: calc(100% - #{$value-size+$border-width});
+}
 $oval-width:$card-width/1.75;
 $oval-height:$card-height - ($border-width*2);
 
@@ -82,36 +79,8 @@ $oval-height:$card-height - ($border-width*2);
   border: $border-width/2 solid $border-color;
   transform: rotate($oval-rotation);
 }
-$value-size: $card-width/4;
-.card-value{
-  color: #fff;
-  font-weight: bold;
-  width:$value-size;
-  height:$value-size;
-  text-align: center;
-  font-size: 250%;
-  position: absolute;
-  z-index: 1;
-
-}
-#back-name{
- transform: rotate((-2*$oval-rotation)-20deg);
- top:50%;
- }
-#left-value{
-  position: absolute;
-  z-index: 1;
-  top: $border-width;
-  left: $border-width;
-}
-#center-value{
-  top: calc(50% - #{$value-size});
-  left: calc(50% - #{$value-size/2});
-  font-size: 550%;
-}
-#right-value{
-  position: absolute;
-  z-index: 1;
-  left: calc(100% - #{$value-size+$border-width});
-  top: calc(100% - #{$value-size+$border-width});
+.hoverable:hover{
+  box-shadow: 0px 0px 40px 10px #fe4;
+  transform: translate(0, -5px);
+  border-radius: 15px;
 }

@@ -25,13 +25,11 @@
 <script type="text/javascript">
   var tcard = document.querySelector('.tcard');
   console.log(document.querySelector('.tcard'));
+  console.log($(".tcard"));
 tcard.addEventListener( 'click', function() {
   tcard.classList.toggle('is-flipped');
   tcard.classList.toggle('hoverable');
-  $(document).ready(function(){
-    alert();
   });
-});
 </script>
 
 <div class="tcard hoverable">

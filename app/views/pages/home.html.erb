@@ -1,9 +1,12 @@
 <h1>Pages#home</h1>
 <a href="/pages/test">Test</a>
+ <%= javascript_pack_tag 'hello_react' %>
+ <script type="text/javascript">
+  // var card = document.querySelector('.uno_card');
+  $(document).ready(function(){
+    const card = $(".uno_card")[0];
+    console.log(card);
+  })
 
-<script type="text/javascript">
-  var card = document.querySelector('.card');
-card.addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
-});
-</script>
+   //card.classList.toggle('is-flipped');
+ </script>
